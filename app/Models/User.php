@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Hash;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -41,4 +42,29 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function isAdmin() : bool
+    {
+        return (bool) $this->is_admin;
+    }
+
+    public function createAdmin(array $details) : self
+    {
+        $user = User::create([
+            'name' => $details['name'],
+            'email' => $details['email'],
+            'password' => Hash::make($details['password']),
+        ]);
+        if (! $this->adminExists()) {
+            $user->is_admin = 1;
+        }
+        $user->save();
+
+        return $user;
+    }
+
+    public function adminExists() : int
+    {
+        return self::where('is_admin', 1)->count();
+    }
 }
