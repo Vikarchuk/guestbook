@@ -22,7 +22,7 @@ class MessageController extends Controller
      */
     public function index()
     {
-        $messages = $this->messageRepository->getAllWithPaginate(20);
+        $messages = $this->messageRepository->getAllWithPaginate(10);
         return view('admin.messages.index', compact('messages'));
     }
 
