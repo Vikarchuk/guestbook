@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Admin\AdminController;
 use App\Repositories\MessageRepository;
 use App\Http\Requests\UpdateMessageRequest;
 use App\Models\Message;
 
-class MessageController extends Controller
+class MessageController extends AdminController
 {
     private $messageRepository;
 
     public function __construct()
     {
+        parent::__construct();
         $this->messageRepository = app(MessageRepository::class);
     }
     /**

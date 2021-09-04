@@ -9,11 +9,18 @@
                     <div class="card-body">
                         <div class="col-xs-12">
                             <div class="box">
-                                <div class="pull-right">
-                                    <a class="btn btn-success" href="{{ route('messages.create') }}" title="Create a message"> Add message
-                                    </a>
+                                <div class="row">
+                                    <div class="col">
+                                        <a class="btn btn-success" href="{{ route('messages.create') }}" title="Create a message">
+                                            Add message
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="btn btn-primary" href="{{ route('admin.messages.index') }}" title="Administration">
+                                            Administration
+                                        </a>
+                                    </div>
                                 </div>
-
                                 <div class="box-body table-responsive no-padding">
                                     <table class="table table-hover">
                                         <tbody><tr>

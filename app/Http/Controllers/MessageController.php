@@ -3,16 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Message;
-use Illuminate\Http\Request;
 use App\Repositories\MessageRepository;
 use App\Http\Requests\StoreMessageRequest;
 
-class MessageController extends Controller
+class MessageController extends BaseController
 {
     private $messageRepository;
 
     public function __construct()
     {
+        parent::__construct();
         $this->messageRepository = app(MessageRepository::class);
     }
     /**
