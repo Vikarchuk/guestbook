@@ -40,7 +40,9 @@
                                         @endforeach
                                         </tbody>
                                     </table>
-                                    {!!$messages->links()!!}
+                                    <div class="d-flex justify-content-center">
+                                        {!!$messages->links('vendor.pagination.bootstrap-4')!!}
+                                    </div>
                                 </div>
                             </div>
                         </div>
