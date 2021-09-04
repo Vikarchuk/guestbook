@@ -35,8 +35,7 @@ class MessageController extends Controller
     public function edit($id, MessageRepository $messageRepository)
     {
         $message = $messageRepository->getById($id);
-        if (empty($message))
-        {
+        if (empty($message)){
             abort(404);
         }
         return view('admin.messages.edit', compact('message'));
@@ -53,11 +52,9 @@ class MessageController extends Controller
     {
         $data = $request->input();
         $message = $messageRepository->getById($id)->update($data);
-        if ($message)
-        {
+        if ($message){
             return redirect()->action([MessageController::class, 'index']);
-        } else
-        {
+        } else{
             return back()->withErrors(['msg' => 'Updating error'])->withInput();
         }
     }
@@ -71,11 +68,9 @@ class MessageController extends Controller
     public function destroy($id, MessageRepository $messageRepository)
     {
         $message = $messageRepository->getById($id)->forceDelete();
-        if ($message)
-        {
+        if ($message){
             return redirect()->action([MessageController::class, 'index']);
-        } else
-        {
+        } else{
             return back()->withErrors(['msg' => 'Deleting error']);
         }
     }

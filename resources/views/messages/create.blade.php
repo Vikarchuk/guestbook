@@ -20,15 +20,15 @@
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
                                     <strong>Name:</strong>
-                                    <input type="text" name="name" class="form-control" placeholder="Name">
+                                    <input type="text" name="name" class="form-control" placeholder="Name" required maxlength="100">
                                 </div>
                                 <div class="form-group">
                                     <strong>Email:</strong>
-                                    <input type="text" name="email" class="form-control" placeholder="Email">
+                                    <input type="email" name="email" class="form-control" placeholder="Email" required>
                                 </div>
                                 <div class="form-group">
                                     <strong>Message:</strong>
-                                    <textarea name="description" class="form-control" placeholder="Select your message here"></textarea>
+                                    <textarea name="description" class="form-control" placeholder="Select your message here" maxlength="1000" required></textarea>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12 text-center">

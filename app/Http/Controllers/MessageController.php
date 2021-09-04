@@ -46,14 +46,11 @@ class MessageController extends Controller
     {
         $data = $request->input();
         $message= (new Message())->create($data);
-        if ($message)
-        {
+        if ($message){
             return redirect()->action([MessageController::class, 'index']);
-        } else
-        {
+        } else{
             return back()->withErrors(['msg' => 'Saving error'])->withInput();
         }
-
     }
 
 }

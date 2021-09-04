@@ -21,15 +21,15 @@
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
                                     <strong>Name:</strong>
-                                    <input type="text" name="name" class="form-control" value="{{ old('name') ?? $message->name }}">
+                                    <input type="text" name="name" class="form-control" value="{{ old('name') ?? $message->name }}" required maxlength="100">
                                 </div>
                                 <div class="form-group">
                                     <strong>Email:</strong>
-                                    <input type="text" name="email" class="form-control" value="{{ old('email') ?? $message->email }}">
+                                    <input type="email" name="email" class="form-control" value="{{ old('email') ?? $message->email }}" required>
                                 </div>
                                 <div class="form-group">
                                     <strong>Message:</strong>
-                                    <textarea name="description" class="form-control">
+                                    <textarea name="description" class="form-control" maxlength="1000" required>
                                         {{ old('description') ?? $message->description }}
                                     </textarea>
                                 </div>
