@@ -10,7 +10,7 @@ php artisan create:admin
 ```
 Install the frontend scaffolding using the ui Artisan command
 ```bash
-php artisan ui bootstrap
+php artisan ui bootstrap --auth
 ```
 Export customize pagination
 ```bash
