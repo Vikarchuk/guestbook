@@ -15,11 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 
 Auth::routes();
-
-Route::resource('/messages', 'App\Http\Controllers\MessageController')->only(['index', 'create', 'store']);
+Route::get('/', [App\Http\Controllers\MessageController::class, 'index'])->name('home');
+Route::resource('/messages', 'App\Http\Controllers\MessageController')->only(['create', 'store']);
 
 Route::name('admin.')->prefix('admin')->group(function () {
     Route::resource('messages', 'App\Http\Controllers\Admin\MessageController')->only(['index', 'edit', 'update', 'destroy']);
 });
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

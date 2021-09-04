@@ -10,12 +10,12 @@
                         <div class="row">
                             <div class="col-lg-12 margin-tb">
                                 <div class="pull-right">
-                                    <a class="btn btn-primary" href="{{ route('messages.index') }}" title="Go back"> Go back </a>
+                                    <a class="btn btn-primary" href="{{ route('home') }}" title="Go back"> Go back </a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-xs-12">
-                            <div class="box">                                
+                            <div class="box">
                                 @include('parts.errorsChecking')
                                 <form action="{{ route('messages.store') }}" method="POST" >
                                     @csrf
